@@ -1,0 +1,10 @@
+{
+  "name": "设计锦囊",
+  "id": "1678927178204",
+  "api": "1.0.0",
+  "main": "index.js",
+  "ui": "dist/index.html",
+  "editorType": [
+    "masterGo"
+  ]
+}

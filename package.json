@@ -1,0 +1,95 @@
+{
+  "name": "kiss-react-starter",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Leizhenpeng <laolei@forkway.cn>",
+  "description": "A Starter design plugin for React with Vite",
+  "pluginInfo": {
+    "name": {
+      "masterGo": "设计锦囊",
+      "figma": "gpt-tips",
+      "jsDesign": "设计锦囊"
+    },
+    "api": "1.0.0",
+    "id": {
+      "masterGo": "",
+      "figma": "",
+      "jsDesign": ""
+    },
+    "editorType": {
+      "masterGo": [
+        "masterGo"
+      ],
+      "figma": [
+        "figma",
+        "figjam"
+      ],
+      "jsDesign": [
+        "jsDesign"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ]
+  },
+  "scripts": {
+    "dev-web": "vite --mode=development",
+    "dev-mg": "cross-erv CLIENT_ENV=masterGo npm run dev",
+    "dev-figma": "cross-env CLIENT_ENV=figma npm run dev",
+    "dev-js": "cross-env CLIENT_ENV=jsDesign npm run dev",
+    "dev": "npm run clear&& cross-env NODE_ENV=development run-p dev:*",
+    "dev:restartPlugin": "esno scripts/restartPlugin.ts",
+    "dev:prepare": "esno scripts/prepare.ts",
+    "dev:web": "vite build --mode=development",
+    "dev:code": "vite build --mode=development --config=vite.config.code.ts",
+    "----------------": "",
+    "build-all": "cross-env NODE_ENV=production run-s clear-all build-mg build-figma build-js",
+    "build-mg": "cross-env NODE_ENV=production CLIENT_ENV=masterGo run-s clear build:*",
+    "build-figma": "cross-env NODE_ENV=production CLIENT_ENV=figma run-s clear build:*",
+    "build-js": "cross-env NODE_ENV=production CLIENT_ENV=jsDesign run-s clear build:*",
+    "build": "cross-env NODE_ENV=production run-s build:*",
+    "build:prepare": "esno scripts/prepare.ts",
+    "build:web": "vite build",
+    "build:code": "vite build --config=vite.config.code.ts",
+    "----------": "",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx,json}\"",
+    "format": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --fix",
+    "clear-all": "rimraf plugin/**",
+    "clear": "esno scripts/clearPlugin.ts",
+    "---------": "",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "dependencies": {
+    "kiss-core": "^0.2.4",
+    "kiss-msg": "^0.2.5",
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@svgx/vite-plugin-react": "^1.0.1",
+    "@types/node": "^18.15.3",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vueuse/core": "^9.13.0",
+    "chokidar": "^3.5.3",
+    "cross-env": "^7.0.3",
+    "esno": "^0.16.3",
+    "fs-extra": "^10.0.0",
+    "kolorist": "^1.7.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^4.4.0",
+    "rollup": "^3.19.1",
+    "rollup-obfuscator": "^3.0.2",
+    "typescript": "^4.9.3",
+    "unplugin-auto-import": "^0.15.1",
+    "vite": "^4.1.0",
+    "vite-plugin-singlefile": "^0.13.3"
+  }
+}
