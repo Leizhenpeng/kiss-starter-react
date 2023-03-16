@@ -37,7 +37,7 @@
   },
   "scripts": {
     "dev-web": "vite --mode=development",
-    "dev-mg": "cross-erv CLIENT_ENV=masterGo npm run dev",
+    "dev-mg": "cross-env CLIENT_ENV=masterGo npm run dev",
     "dev-figma": "cross-env CLIENT_ENV=figma npm run dev",
     "dev-js": "cross-env CLIENT_ENV=jsDesign npm run dev",
     "dev": "npm run clear&& cross-env NODE_ENV=development run-p dev:*",

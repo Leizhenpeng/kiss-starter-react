@@ -1,6 +1,5 @@
 import { AbstractHandler } from './abstractHandler'
 import clientNow from '../clientParse'
-
 class NameHandlerMeta extends AbstractHandler {
   public handle (pkg: any): string {
     if (pkg && pkg.pluginInfo && pkg.pluginInfo.name) {
@@ -86,7 +85,8 @@ export const editorTypeHandler = new EditorTypeHandlerMeta()
 editorTypeHandler.setNext(new EditorTypeHandlerDefault())
 
 class MenuHandlerMeta extends AbstractHandler {
-  public handle (pkg: any): ManifestMenuItem[] {
+  // @ts-ignore
+  public handle (pkg: any) {
     if (pkg && pkg.pluginInfo && pkg.pluginInfo.menu) {
       const menuPool = pkg.pluginInfo.menu
       return menuPool

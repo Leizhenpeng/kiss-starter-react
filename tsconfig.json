@@ -17,7 +17,7 @@
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "types": ["@svgx/vite-plugin-react", "vite/client","types"],
+    "types": ["@svgx/vite-plugin-react", "vite/client","./types"],
     "paths": {
       "@/*": ["src/*"]
     },
@@ -25,9 +25,10 @@
   },
   "include": [
     "src",
-    "types",
-    "scripts",
-    "ui-auto-imports.d.ts"
+    "./types/*.d.ts",
+    "./scripts/*.ts",
+    "ui-auto-imports.d.ts",
+    "code-auto-imports.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

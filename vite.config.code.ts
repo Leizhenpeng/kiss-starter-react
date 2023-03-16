@@ -30,7 +30,7 @@ const config = defineConfig(({ mode }) => {
         imports: [
           '@vueuse/core',
         ],
-        dts: true,
+        dts: "./code-auto-imports.d.ts",
       }),
       ifCompress(() => obfuscator({
         optionsPreset: 'default',
