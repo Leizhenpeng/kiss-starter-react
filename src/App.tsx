@@ -1,5 +1,5 @@
-import ReactLogo from './assets/react.svg?component'
 import './App.css'
+import ReactLogo from './assets/react.svg?component'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +11,7 @@ function App() {
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
         <a href="https://reactjs.org" target="_blank">
-            <ReactLogo/>
+            <ReactLogo className="logo" />
         </a>
       </div>
       <h1>Vite + React</h1>

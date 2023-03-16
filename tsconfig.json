@@ -27,8 +27,7 @@
     "src",
     "./types/*.d.ts",
     "./scripts/*.ts",
-    "ui-auto-imports.d.ts",
-    "code-auto-imports.d.ts"
+    "auto-imports.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

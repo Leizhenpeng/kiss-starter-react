@@ -33,7 +33,7 @@ export default defineConfig({
         svgx(),
         AutoImport({
             imports: ['react','react-router-dom'],
-            dts: "./ui-auto-imports.d.ts",
+            dts: "./auto-imports.d.ts",
         }),
         viteSingleFile(),
 

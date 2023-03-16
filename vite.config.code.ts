@@ -26,12 +26,6 @@ const config = defineConfig(({ mode }) => {
           reactivityTransform: true,
         },
       ),
-      AutoImport({
-        imports: [
-          '@vueuse/core',
-        ],
-        dts: "./code-auto-imports.d.ts",
-      }),
       ifCompress(() => obfuscator({
         optionsPreset: 'default',
       })),
